@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Corner Counter — Live Item Scanner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-wall: #f4ece1;
+      --bg-plaster: #efe3d2;
+      --wood-dark: #5c3822;
+      --wood-mid: #7d4e30;
+      --wood-light: #a66c44;
+      --awning-red: #b83b2b;
+      --awning-cream: #fbf6ee;
+      --ink: #241912;
+      --ink-muted: #6b5748;
+      --accent-sage: #2e6f4e;
+      --accent-gold: #c98a2e;
+      --border-soft: rgba(92, 56, 34, 0.16);
+      --shadow-soft: 0 14px 34px rgba(44, 25, 12, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--ink);
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(255, 248, 235, 0.85), transparent 45%),
+        repeating-linear-gradient(
+          90deg,
+          var(--bg-wall) 0px,
+          var(--bg-wall) 64px,
+          var(--bg-plaster) 64px,
+          var(--bg-plaster) 66px
+        );
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 48px;
+    }
+
+    /* Striped Shop Awning */
+    .awning-wrap {
+      position: relative;
+      background: repeating-linear-gradient(
+        90deg,
+        var(--awning-red) 0px,
+        var(--awning-red) 42px,
+        var(--awning-cream) 42px,
+        var(--awning-cream) 84px
+      );
+      border-bottom: 5px solid var(--wood-dark);
+      box-shadow: 0 8px 24px rgba(36, 25, 18, 0.16);
+    }
+
+    .awning-scallops {
+      height: 16px;
+      background:
+        radial-gradient(circle at 21px 0, transparent 15px, var(--awning-red) 15.5px) 0 0 / 84px 16px repeat-x,
+        radial-gradient(circle at 63px 0, transparent 15px, var(--awning-cream) 15.5px) 0 0 / 84px 16px repeat-x;
+      filter: drop-shadow(0 3px 2px rgba(0, 0, 0, 0.14));
+    }
+
+    /* Hanging Shop Sign */
+    .storefront-header {
+      max-width: 1120px;
+      margin: 26px auto 12px;
+      padding: 0 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .signboard {
+      background: var(--awning-cream);
+      border: 3px solid var(--wood-dark);
+      border-radius: 14px;
+      padding: 14px 24px;
+      box-shadow: 0 6px 0 var(--wood-dark), var(--shadow-soft);
+      position: relative;
+    }
+
+    .signboard-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--awning-red);
+      margin-bottom: 4px;
+    }
+
+    .signboard h1 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: clamp(1.5rem, 3vw, 2.15rem);
+      line-height: 1.15;
+      color: var(--ink);
+    }
+
+    .open-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fffdf9;
+      border: 2px solid var(--wood-dark);
+      border-radius: 999px;
